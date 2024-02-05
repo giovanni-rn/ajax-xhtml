@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Your Page Title Here</title>
+  </head>
+  <body>
+    <h1>Simple Heading</h1>
+  </body>
+  <script>
+    alert("Yo");
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = () => {
+      xhttp.onreadystatechange = () => console.log(xhttp.readyState);
+      const books = Array.from(xhttp.responseXML.getElementsByTagName("book"));
+      books.forEach((book) =>
+        console.log(book.getElementsByTagName("title")[0].textContent)
+      );
+    };
+    xhttp.open("GET", "http://localhost:8000?file=books.xml");
+    xhttp.send();
+  </script>
+</html>
