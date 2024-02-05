@@ -18,4 +18,28 @@
     <year>1949</year>
     <genre>Dystopian</genre>
   </book>
+  <book id="4">
+    <title>Fahrenheit 451</title>
+    <author>Ray Bradbury</author>
+    <year>1953</year>
+    <genre>Dystopian</genre>
+  </book>
+  <book id="5">
+    <title>How to Read a Book</title>
+    <author>Mortimer J. Alder</author>
+    <year>1967</year>
+    <genre>Education</genre>
+  </book>
+  <book id="6">
+    <title>Brand New World</title>
+    <author>Aldous Huxley</author>
+    <year>1932</year>
+    <genre>Dystopian</genre>
+  </book>
+  <book id="7">
+    <title>Ravage</title>
+    <author>René Barjavel</author>
+    <year>1943</year>
+    <genre>Dystopian</genre>
+  </book>
 </library>

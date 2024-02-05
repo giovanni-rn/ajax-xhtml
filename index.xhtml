@@ -2,20 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Your Page Title Here</title>
+    <title>Book collection</title>
   </head>
   <body>
-    <h1>Simple Heading</h1>
+    <h1>Our books collection</h1>
+    <ul id="book-list"></ul>
   </body>
   <script>
-    alert("Yo");
     const xhttp = new XMLHttpRequest();
     xhttp.onload = () => {
-      xhttp.onreadystatechange = () => console.log(xhttp.readyState);
       const books = Array.from(xhttp.responseXML.getElementsByTagName("book"));
-      books.forEach((book) =>
-        console.log(book.getElementsByTagName("title")[0].textContent)
-      );
+      console.log(books);
+      books.forEach((book) => {
+        const bookTitle = book.getElementsByTagName("title")[0].textContent;
+        const newBook = document.createElement("li");
+        newBook.innerText = bookTitle;
+        document.getElementById("book-list").appendChild(newBook);
+      });
     };
     xhttp.open("GET", "http://localhost:8000?file=books.xml");
     xhttp.send();
